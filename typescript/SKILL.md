@@ -1,6 +1,6 @@
 ---
 name: typescript
-description: Use TypeScript for type-safe JavaScript: types, interfaces, generics, narrowing, tsconfig, modules, and strict mode. Use when writing or reviewing TypeScript, configuring tsconfig.json, defining types or interfaces, generics, type inference, or when the user mentions TypeScript, TS, or type checking.
+description: "Use TypeScript for type-safe JavaScript: types, interfaces, generics, narrowing, tsconfig, modules, and strict mode. Use when writing or reviewing TypeScript, configuring tsconfig.json, defining types or interfaces, generics, type inference, or when the user mentions TypeScript, TS, or type checking."
 ---
 
 # TypeScript
