@@ -1,6 +1,6 @@
 ---
 name: zod
-description: Define and use Zod schemas for TypeScript-first validation: primitives, objects, arrays, unions, refinements, transform, z.infer, parse, safeParse. Use when validating input, parsing API data, form validation with react-hook-form, or when the user mentions Zod, schema validation, or z.infer.
+description: "Define and use Zod schemas for TypeScript-first validation: primitives, objects, arrays, unions, refinements, transform, z.infer, parse, safeParse. Use when validating input, parsing API data, form validation with react-hook-form, or when the user mentions Zod, schema validation, or z.infer."
 ---
 
 # Zod
