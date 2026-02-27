@@ -97,6 +97,7 @@ Add with: `pnpm dlx shadcn@latest add <name>` (multiple: `add button card dialog
 | **Resizable** | `resizable` | Resizable panels |
 | **Separator** | `separator` | Horizontal or vertical divider line |
 | **Scroll Area** | `scroll-area` | Styled scroll area |
+| **Sidebar** | `sidebar` | Composable, themeable and customizable sidebar |
 
 ### Forms & input
 

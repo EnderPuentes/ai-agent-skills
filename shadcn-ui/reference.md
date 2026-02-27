@@ -30,7 +30,7 @@ This file complements the shadcn-ui skill with official documentation links and 
 
 Use these with: `pnpm dlx shadcn@latest add <name>`.
 
-**Layout & structure**: accordion, aspect-ratio, card, collapsible, resizable, separator, scroll-area  
+**Layout & structure**: accordion, aspect-ratio, card, collapsible, resizable, separator, scroll-area, sidebar  
 
 **Forms & input**: button, checkbox, form, input, input-otp, label, radio-group, select, slider, switch, textarea  
 
