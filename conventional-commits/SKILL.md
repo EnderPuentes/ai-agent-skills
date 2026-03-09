@@ -340,6 +340,11 @@ Conventional Commits enables:
 - **Release notes**: Extract features and fixes from commits
 - **Build triggers**: Different build processes for different commit types
 
+## Additional Resources
+
+- [reference.md](reference.md) — Official spec, commit types, SemVer correlation, tooling — indexable
+- **Official spec**: https://www.conventionalcommits.org/en/v1.0.0/
+
 ## Specification Reference
 
 This skill is based on the official [Conventional Commits specification v1.0.0](https://www.conventionalcommits.org/en/v1.0.0/).

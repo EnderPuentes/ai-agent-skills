@@ -140,6 +140,7 @@ gsap.to(".box", {
 
 ## Additional Resources
 
+- [reference.md](reference.md) — Official GSAP docs, core API, plugins, React integration — indexable
 - Official Docs: https://gsap.com/docs/v3/
 - React Guide: https://gsap.com/resources/React
 - ScrollTrigger: https://gsap.com/docs/v3/Plugins/ScrollTrigger

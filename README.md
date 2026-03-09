@@ -20,8 +20,9 @@ Generate and validate commit messages following the Conventional Commits specifi
 - Examples for all commit types
 - Breaking change handling
 - Semantic versioning correlation
+- **reference.md**: Official spec, commit types, SemVer correlation, tooling — indexable
 
-**Note**: This skill is built from the official documentation at https://www.conventionalcommits.org/en/v1.0.0/
+**Docs**: [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 ### pagespeed-insights
 
@@ -40,8 +41,9 @@ Audit web pages for performance optimization following PageSpeed Insights guidel
 - Performance optimization checklist
 - Accessibility and SEO best practices
 - Code examples for common optimizations
+- **reference.md**: Official PageSpeed, Lighthouse, Core Web Vitals, optimization guides — indexable
 
-**Note**: This skill is built from the official documentation at https://developers.google.com/speed/docs/insights/v5/about?hl=es-419
+**Docs**: [PageSpeed Insights](https://developers.google.com/speed/docs/insights/v5/about?hl=es-419)
 
 ### tailwind-css
 
@@ -95,6 +97,7 @@ Install and use GSAP (GreenSock Animation Platform) for high-performance JavaScr
 - React integration with `@gsap/react` and `useGSAP`
 - Popular plugins: ScrollTrigger, Flip, Observer, etc.
 - Best practices for performance and FOUC prevention
+- **reference.md**: Official GSAP docs, core API, plugins, React integration — indexable
 
 **Docs**: [GSAP](https://gsap.com/docs/v3/)
 

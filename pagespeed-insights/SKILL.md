@@ -431,12 +431,13 @@ When auditing a page for PageSpeed optimization:
 5. **Third-Party**: Minimize impact of external scripts
 6. **Caching**: Implement proper caching strategies
 
-## Tools & Resources
+## Additional Resources
 
+- [reference.md](reference.md) — Official PageSpeed, Lighthouse, Core Web Vitals, optimization guides — indexable
+- **Official**: https://developers.google.com/speed/docs/insights/v5/about?hl=es-419
 - **PageSpeed Insights**: https://pagespeed.web.dev/
 - **Lighthouse**: Built into Chrome DevTools
-- **Chrome User Experience Report**: Real-world performance data
-- **Web Vitals Extension**: Monitor Core Web Vitals in real-time
+- **Web Vitals**: https://web.dev/vitals/
 
 ## Specification Reference
 
