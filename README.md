@@ -134,6 +134,25 @@ Define and use Zod schemas for TypeScript-first validation with static type infe
 
 **Docs**: [Zod](https://zod.dev)
 
+### storybook
+
+Install and use Storybook for developing UI components in isolation. Colocated stories in `system/` directory, CSF format, args, decorators, play functions, and testing.
+
+**Location**: `storybook/`
+
+**Use when**: Building component libraries, design systems, documenting UI components, testing components in isolation, or when the user mentions Storybook, stories, component development, or UI workshop.
+
+**Features**:
+
+- Installation for Next.js, Vite, React, Vue, Angular, Svelte
+- **system/** structure: components in folders with colocated `*.stories.tsx`
+- Component Story Format (CSF 3): meta, stories, args
+- Decorators, parameters, play functions for interaction tests
+- Vitest addon, accessibility, visual testing
+- **reference.md**: Official Storybook docs, frameworks, addons, testing — indexable
+
+**Docs**: [Storybook](https://storybook.js.org/docs)
+
 ## Structure
 
 Each skill follows the standard skills.sh structure:
@@ -185,6 +204,12 @@ npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill typescrip
 
 ```bash
 npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill zod
+```
+
+### Install storybook skill
+
+```bash
+npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill storybook
 ```
 
 For more information about using skills in your agent, follow the [skills.sh integration guide](https://skills.sh).
