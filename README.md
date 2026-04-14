@@ -101,6 +101,24 @@ Install and use GSAP (GreenSock Animation Platform) for high-performance JavaScr
 
 **Docs**: [GSAP](https://gsap.com/docs/v3/)
 
+### jsdoc
+
+Write and maintain API documentation using JSDoc comments colocated with JavaScript/TypeScript code. Covers comment rules, core tags, and CLI generation.
+
+**Location**: `jsdoc/`
+
+**Use when**: Documenting functions/classes/modules, standardizing `@param` and `@returns`, generating API docs, or when the user mentions JSDoc tags like `@todo`.
+
+**Features**:
+
+- Comment block rules (`/** ... */`) and placement guidelines
+- Core tags (`@param`, `@returns`, `@constructor`, `@todo`)
+- Common examples for functions and constructor-style docs
+- CLI docs generation flow (`jsdoc file.js`)
+- **reference.md**: Official JSDoc docs links and command-line/config references — indexable
+
+**Docs**: [JSDoc](https://jsdoc.app/)
+
 ### typescript
 
 Use TypeScript for type-safe JavaScript: types, interfaces, generics, narrowing, tsconfig, modules, and strict mode.
@@ -199,7 +217,15 @@ npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill shadcn-ui
 npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill gsap
 ```
 
+### Install jsdoc skill
+
+```bash
+npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill jsdoc
+```
+
 ### Install typescript skill
+
+```bash
 npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill typescript
 ```
 

@@ -18,20 +18,14 @@ GSAP is a robust, blazingly fast JavaScript animation library that lets you anim
 
 ## Installation
 
-### Core Installation
-```bash
-npm install gsap
-# or
-pnpm add gsap
-```
+Reference: [GSAP docs](https://gsap.com/docs/v3/), [React guide](https://gsap.com/resources/React)
 
-### React / Next.js Integration (Recommended)
-GSAP provides a dedicated React hook to make cleanup and context management effortless.
-```bash
-npm install gsap @gsap/react
-# or
-pnpm add gsap @gsap/react
-```
+| Use case | Packages |
+|----------|----------|
+| Core | `gsap` |
+| React / Next.js (recommended) | `gsap`, `@gsap/react` |
+
+Add via your package manager (see [npm](https://www.npmjs.com/package/gsap)). GSAP provides a dedicated React hook (`useGSAP`) for cleanup and context management.
 
 ---
 

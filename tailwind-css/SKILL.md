@@ -23,8 +23,8 @@ Tailwind CSS is a utility-first CSS framework. Style by combining single-purpose
 
 ### Next.js (App Router, 15+)
 
-1. Create project (if needed): `npx create-next-app@latest my-project --typescript --eslint --app`
-2. Install: `npm install tailwindcss @tailwindcss/postcss postcss`
+1. Create project (if needed): `create-next-app@latest` — see [Next.js docs](https://nextjs.org/docs).
+2. Add packages: `tailwindcss`, `@tailwindcss/postcss`, `postcss` (via your package manager).
 3. Create `postcss.config.mjs` in project root:
 
 ```js
@@ -42,7 +42,7 @@ export default config;
 @import "tailwindcss";
 ```
 
-5. Run: `npm run dev`
+5. Run the dev script (e.g. `dev` in package.json).
 
 Use `className` in React/TSX (e.g. in `app/page.tsx`):
 
@@ -60,7 +60,7 @@ Ensure `app/globals.css` is imported in `app/layout.tsx` (Create Next App does t
 
 ### Vite (React, Vue, Qwik, etc.)
 
-1. Install: `npm install tailwindcss @tailwindcss/vite`
+1. Add packages: `tailwindcss`, `@tailwindcss/vite` (via your package manager).
 2. In `vite.config.ts`:
 
 ```ts
@@ -75,9 +75,9 @@ export default defineConfig({
 
 ### Tailwind CLI (standalone)
 
-1. Install: `npm install tailwindcss @tailwindcss/cli`
+1. Add packages: `tailwindcss`, `@tailwindcss/cli` (via your package manager).
 2. Main CSS: `@import "tailwindcss";`
-3. Build: `npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch`
+3. Build: `@tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch` (invoke via package manager).
 
 ---
 

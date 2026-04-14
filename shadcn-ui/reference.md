@@ -15,7 +15,7 @@ This file complements the shadcn-ui skill with official documentation links and 
 
 ## Framework-specific installation
 
-- **Next.js**: Use `npx shadcn@latest create` or `init`; select Next.js. App Router is supported; set `rsc: true` in `components.json` when using Server Components.
+- **Next.js**: CLI `shadcn create` or `shadcn init`; select Next.js. App Router supported; set `rsc: true` in `components.json` for Server Components. Invocation: see [Installation docs](https://ui.shadcn.com/docs/installation).
 - **Vite**: https://ui.shadcn.com/docs/installation/vite — Tailwind via `@tailwindcss/vite`, path alias `@/*`, then `shadcn init`.
 - **Manual**: https://ui.shadcn.com/docs/installation/manual — Add Tailwind, path aliases, `cn` helper, and create `components.json` by hand if needed.
 
@@ -28,7 +28,7 @@ This file complements the shadcn-ui skill with official documentation links and 
 
 ## Component list (CLI names for `shadcn add`)
 
-Use these with: `pnpm dlx shadcn@latest add <name>`.
+CLI: `shadcn add <name>`. Invocation details in [Installation docs](https://ui.shadcn.com/docs/installation).
 
 **Layout & structure**: accordion, aspect-ratio, card, collapsible, resizable, separator, scroll-area, sidebar  
 

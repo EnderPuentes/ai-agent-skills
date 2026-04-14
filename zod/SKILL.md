@@ -11,7 +11,7 @@ Zod is a **TypeScript-first schema validation library** with **static type infer
 
 **Requirements**: TypeScript 5.5+ recommended; enable **`strict`** in `tsconfig.json`.
 
-**Install**: `npm install zod`
+**Install**: Add `zod` via your package manager. See [zod.dev](https://zod.dev).
 
 ---
 

@@ -35,7 +35,7 @@ This file complements the gsap skill with official documentation links and API s
 ## React integration
 
 - **useGSAP hook**: https://gsap.com/resources/React — Cleanup, scope, dependencies
-- **@gsap/react**: `npm install gsap @gsap/react`
+- **@gsap/react**: Add `gsap` and `@gsap/react` via package manager (see [npm](https://www.npmjs.com/package/gsap))
 - **gsap.registerPlugin(useGSAP)**: Required before use
 
 ## Common properties (tween config)
@@ -46,8 +46,4 @@ This file complements the gsap skill with official documentation links and API s
 
 ## Installation
 
-```bash
-npm install gsap
-# React/Next.js
-npm install gsap @gsap/react
-```
+Add `gsap` (core) or `gsap` + `@gsap/react` (React/Next.js) via your package manager. See [npm](https://www.npmjs.com/package/gsap).

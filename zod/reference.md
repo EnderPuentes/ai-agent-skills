@@ -60,8 +60,4 @@ Use these for deep lookup; base URL is https://zod.dev/api unless noted.
 
 ## Installation
 
-```bash
-npm install zod
-```
-
-Also available as `@zod/zod` on jsr.io. Zod provides an MCP server for agent/editor integration; see https://zod.dev for instructions.
+Add `zod` via your package manager. Also available as `@zod/zod` on jsr.io. Zod provides an MCP server for agent/editor integration; see https://zod.dev for instructions.

@@ -23,41 +23,35 @@ shadcn/ui is a collection of accessible, customizable React components built on 
 
 ## Installation
 
+Reference: [Official installation guide](https://ui.shadcn.com/docs/installation)
+
 ### New project (recommended)
 
-Scaffold with Tailwind and shadcn:
+Scaffold with Tailwind and shadcn. From the official docs:
 
-```bash
-pnpm dlx shadcn@latest create
-# or: npx shadcn@latest create
-```
+| Action | CLI command |
+|--------|-------------|
+| New project | `shadcn create` |
+| Init existing | `shadcn init` |
+| Add component(s) | `shadcn add <name>` |
 
-Choose framework (Next.js, Vite, etc.), style (new-york recommended), base color, and CSS variables. Then add components as needed.
+Invoke via your package manager (see [docs](https://ui.shadcn.com/docs/installation)). Choose framework (Next.js, Vite, etc.), style (new-york recommended), base color, and CSS variables.
 
 ### Existing project (Next.js App Router)
 
-1. **Init** (creates `components.json`, optional `cn` helper and base styles):
-
-```bash
-pnpm dlx shadcn@latest init
-```
+1. **Init** — creates `components.json`, optional `cn` helper and base styles. Run: `shadcn init` (invoke via package manager; see docs above).
 
 2. **Paths and Tailwind**
    - **tsconfig**: `"baseUrl": "."`, `"paths": { "@/*": ["./src/*"] }` (in both root and app tsconfig if split).
    - **Tailwind v4**: Main CSS (e.g. `app/globals.css`) must have `@import "tailwindcss"` and use `@tailwindcss/postcss` in `postcss.config.mjs`. Do not add `tailwind.config.js`.
 
-3. **Add components** (see list below):
-
-```bash
-pnpm dlx shadcn@latest add button
-pnpm dlx shadcn@latest add card dialog
-```
+3. **Add components** — e.g. `shadcn add button`, `shadcn add card dialog` (see component list below).
 
 Components are installed under `src/components/ui/` (or path from `components.json`).
 
 ### Existing project (Vite)
 
-- Use `resolve.alias: { "@": path.resolve(__dirname, "./src") }` in `vite.config.ts`; install `@types/node` if using `path`.
+- Use `resolve.alias: { "@": path.resolve(__dirname, "./src") }` in `vite.config.ts`; add `@types/node` if using `path`.
 - Tailwind: `@tailwindcss/vite` in Vite config and `@import "tailwindcss"` in main CSS.
 
 ---
@@ -84,7 +78,7 @@ With Tailwind v4, theme is in CSS via `@theme` and CSS variables, not in a confi
 
 ## Official components (current list)
 
-Add with: `pnpm dlx shadcn@latest add <name>` (multiple: `add button card dialog`).
+Add via `shadcn add <name>` (multiple: `shadcn add button card dialog`). Invoke via package manager: see Installation docs.
 
 ### Layout & structure
 

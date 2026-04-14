@@ -17,22 +17,20 @@ Storybook is a **frontend workshop** for building UI components and pages in iso
 
 ## Installation
 
-Run inside the project root:
+Reference: [Official install guide](https://storybook.js.org/docs/get-started/install)
 
-```bash
-npm create storybook@latest
-```
+| Action | CLI command |
+|--------|--------------|
+| New or existing project | `create storybook@latest` |
+| Specific framework | `create storybook@latest --type <framework>` |
+| Dev server | `run storybook` |
+| Build | `run build-storybook` |
 
-The CLI detects the framework (Next.js, Vite, React, Vue, Angular, Svelte, etc.) and configures accordingly. For manual framework selection:
-
-```bash
-npm create storybook@latest --type nextjs
-# or: react, vue3, angular, svelte, sveltekit, etc.
-```
+Invoke via your package manager (see [docs](https://storybook.js.org/docs/get-started/install)). The CLI detects the framework (Next.js, Vite, React, Vue, Angular, Svelte, etc.). For manual selection: `--type nextjs`, `react`, `vue3`, `angular`, `svelte`, `sveltekit`, etc.
 
 **Recommended**: Use `@storybook/nextjs-vite` for Next.js projects (faster than Webpack). Use `@storybook/react-vite` for Vite + React.
 
-After install, run: `npm run storybook` (dev server, typically port 6006). Build: `npm run build-storybook`.
+Dev server: typically port 6006.
 
 ---
 
@@ -246,7 +244,7 @@ export default preview;
 
 - **Render tests**: Every story is a smoke test — it passes if it renders without error.
 - **Interaction tests**: Use `play` with `expect` from `storybook/test`.
-- **Vitest addon**: `npx storybook add @storybook/addon-vitest` — runs stories as Vitest tests.
+- **Vitest addon**: `storybook add @storybook/addon-vitest` — runs stories as Vitest tests (invoke via package manager; see [docs](https://storybook.js.org/docs/writing-tests/integrations/vitest-addon)).
 - **Accessibility**: Enable `@storybook/addon-a11y` for automated a11y checks.
 - **Visual testing**: Use Chromatic or snapshot tests for visual regression.
 
