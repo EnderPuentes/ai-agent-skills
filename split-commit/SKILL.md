@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Git split commits
 
-Collaboration with **Bruno Balderrama** ([bmbalderrabano@gmail.com](mailto:bmbalderrabano@gmail.com)).
+**Author**: Bruno Balderrama ([bmbalderrabano@gmail.com](mailto:bmbalderrabano@gmail.com)). Included in this collection with the author's permission.
 
 Goal: split **current local changes** into multiple logical commits by producing a **single PowerShell script** the user runs themselves.
 

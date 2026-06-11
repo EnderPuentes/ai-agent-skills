@@ -42,7 +42,7 @@ Audit the git diff against `develop` for UI/React review themes—Tailwind bloat
 - Severity and confidence grading per finding
 - Mandatory output shape (summary, findings, clean pass, follow-ups)
 
-**Collaboration**: Bruno Balderrama ([bmbalderrabano@gmail.com](mailto:bmbalderrabano@gmail.com))
+**Author**: Bruno Balderrama ([bmbalderrabano@gmail.com](mailto:bmbalderrabano@gmail.com)) (MIT, included with permission)
 
 #### split-commit
 
@@ -58,7 +58,7 @@ Analyze local git changes and return a copy-paste PowerShell script to split unc
 - Commit message rules aligned with `.githooks/commit-msg` (branch-aware)
 - Copy-paste PowerShell output with per-file `git add` and conventional commit messages
 
-**Collaboration**: Bruno Balderrama ([bmbalderrabano@gmail.com](mailto:bmbalderrabano@gmail.com))
+**Author**: Bruno Balderrama ([bmbalderrabano@gmail.com](mailto:bmbalderrabano@gmail.com)) (MIT, included with permission)
 
 ### Productivity
 

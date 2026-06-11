@@ -1,18 +1,27 @@
 # License
 
-## Skill License - Free Use
+This skill was created by **Bruno Balderrama** ([bmbalderrabano@gmail.com](mailto:bmbalderrabano@gmail.com)) and is included in this collection with the author's permission.
 
-This skill (the documentation, structure, and implementation) was created by **Ender Puentes <Endev/>** in collaboration with **Bruno Balderrama** ([bmbalderrabano@gmail.com](mailto:bmbalderrabano@gmail.com)) and is provided for **free and open use**. You are free to:
+**Collection maintainer**: Ender Puentes <Endev/> — https://enderpuentes.com
 
-- ✅ **Use** this skill in any project, personal or commercial
-- ✅ **Modify** the skill to fit your needs
-- ✅ **Distribute** the skill to others
-- ✅ **Share** modified versions of the skill
-- ✅ **Include** this skill in your own skill collections
+## MIT License
 
-**No restrictions apply** - this skill is available for unrestricted use. Attribution is appreciated but not required.
+Copyright (c) Bruno Balderrama
 
-## Skill Authors
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-- **Ender Puentes <Endev/>** — https://enderpuentes.com
-- **Bruno Balderrama** — bmbalderrabano@gmail.com
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

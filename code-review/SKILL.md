@@ -5,7 +5,7 @@ description: Audits the git diff against develop (not main) for UI/React review 
 
 # Code review
 
-Collaboration with **Bruno Balderrama** ([bmbalderrabano@gmail.com](mailto:bmbalderrabano@gmail.com)).
+**Author**: Bruno Balderrama ([bmbalderrabano@gmail.com](mailto:bmbalderrabano@gmail.com)). Included in this collection with the author's permission.
 
 ## Goal
 
