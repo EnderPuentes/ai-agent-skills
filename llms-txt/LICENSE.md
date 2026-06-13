@@ -12,4 +12,4 @@ This skill (the documentation, structure, and implementation) was created by **E
 
 **No restrictions apply** – this skill is available for unrestricted use. Attribution is appreciated but not required.
 
-**Note**: This skill (json-ld) documents and references JSON-LD (W3C), schema.org, and Google Search Central structured data guidelines; the skill itself is an independent work. JSON-LD, schema.org, and Google documentation have their own terms and licenses.
+**Note**: This skill (llms-txt) documents the llms.txt convention (llmstxt.org, Answer.AI / Jeremy Howard); the skill itself is an independent work.

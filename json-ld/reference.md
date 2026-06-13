@@ -125,5 +125,5 @@ API entry: https://www.w3.org/TR/json-ld11-api/
 
 ## Related skills
 
-- **pagespeed-insights**: Performance auditing; structured data size is minor but avoid huge inline JSON blocks on critical paths.
-- **typescript**: Type-safe schema builders and CMS field mapping.
+- **sitemap**: sitemaps.org protocol for URL enumeration.
+- **llms-txt**: llms.txt for answer engines and AI agents.

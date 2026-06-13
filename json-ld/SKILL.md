@@ -1,6 +1,6 @@
 ---
 name: json-ld
-description: Add and validate JSON-LD structured data with schema.org vocabulary for SEO, rich results, and linked data. Use when implementing structured data, schema markup, application/ld+json, Organization, WebSite, Article, Product, FAQ, BreadcrumbList, or when the user mentions JSON-LD, schema.org, rich snippets, or Google structured data.
+description: Add and validate JSON-LD structured data with schema.org for SEO rich results. Use when implementing structured data, schema markup, application/ld+json, Organization, WebSite, Article, Product, FAQ, BreadcrumbList, or when the user mentions JSON-LD, schema.org, rich snippets, or Google structured data.
 ---
 
 # JSON-LD
@@ -249,7 +249,10 @@ For programmatic checks in Node.js, use the [`jsonld`](https://www.npmjs.com/pac
 - **HTTP headers** — `Link` with `rel="alternate"; type="application/ld+json"` for non-HTML resources (API, PDF).
 - **RDF interop** — JSON-LD serializes RDF; use expanded form and N-Quads when integrating with RDF tools.
 
-See [reference.md](reference.md) for full official documentation index.
+## Related skills
+
+- **sitemap** — XML sitemap for crawl discovery.
+- **llms-txt** — llms.txt for AI/agent context (complements, does not replace, JSON-LD).
 
 ---
 

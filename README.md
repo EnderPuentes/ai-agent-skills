@@ -246,26 +246,61 @@ Audit web pages for performance optimization following PageSpeed Insights guidel
 
 **Docs**: [PageSpeed Insights](https://developers.google.com/speed/docs/insights/v5/about?hl=es-419)
 
-### SEO & structured data
+### SEO & AEO
 
-#### json-ld
+Discoverability for search engines and AI assistants. Three format-specific skills — install the one that matches the task.
 
-Add and validate JSON-LD structured data with schema.org vocabulary for SEO, rich results, and linked data. Based on W3C JSON-LD 1.1, schema.org, and Google Search Central guidelines.
+#### sitemap
 
-**Location**: `json-ld/`
+Create and maintain XML sitemaps per sitemaps.org for search engine crawl discovery.
 
-**Use when**: Implementing structured data, schema markup, `application/ld+json`, Organization, WebSite, Article, Product, FAQ, BreadcrumbList, or when the user mentions JSON-LD, schema.org, rich snippets, or Google structured data.
+**Location**: `sitemap/`
+
+**Use when**: Adding `sitemap.xml`, sitemap index, Next.js `sitemap.ts`, `lastmod`, `changefreq`, robots.txt `Sitemap:` directive, or when the user mentions sitemap or URL discovery.
 
 **Features**:
 
-- Core JSON-LD syntax (`@context`, `@type`, `@id`, `@graph`)
-- HTML embedding and Next.js App Router patterns
-- Common schema.org types with copy-paste examples (Organization, WebSite, Article, BreadcrumbList)
+- XML protocol 0.9 (`urlset`, `sitemapindex`, tags, limits)
+- Entity escaping, placement rules, FAQ highlights
+- Next.js `MetadataRoute.Sitemap` pattern
+- vs JSON-LD and llms.txt
+- **reference.md**: sitemaps.org protocol, FAQ, XSD, Google — indexable
+
+**Docs**: [sitemaps.org](https://www.sitemaps.org/protocol.html)
+
+#### json-ld
+
+Add and validate JSON-LD structured data with schema.org for SEO rich results. Based on W3C JSON-LD 1.1 and Google Search Central.
+
+**Location**: `json-ld/`
+
+**Use when**: Structured data, schema markup, `application/ld+json`, Organization, WebSite, Article, Product, FAQ, BreadcrumbList, JSON-LD, schema.org, or rich snippets.
+
+**Features**:
+
+- Core JSON-LD syntax, Next.js embedding, common schema.org types
 - Validation workflow (Playground, Rich Results Test)
-- Google SEO guidelines summary and common mistakes
-- **reference.md**: W3C specs, schema.org types, Google Search Central, tools, npm libraries — indexable
+- Google SEO guidelines and common mistakes
+- **reference.md**: W3C, schema.org, Google Search Central — indexable
 
 **Docs**: [JSON-LD 1.1](https://www.w3.org/TR/json-ld11/) · [schema.org](https://schema.org/)
+
+#### llms-txt
+
+Create `llms.txt` per llmstxt.org for AI assistants and AEO/GEO.
+
+**Location**: `llms-txt/`
+
+**Use when**: Adding `llms.txt`, `llms-full.txt`, AI-readable site maps, agent context, AEO, GEO, or when the user mentions llms.txt or llmstxt.
+
+**Features**:
+
+- Official spec format (H1, blockquote, file lists, `## Optional`)
+- Static and dynamic Next.js delivery
+- `.md` mirrors, llms-ctx; vs sitemap and JSON-LD
+- **reference.md**: llmstxt.org, tools, examples — indexable
+
+**Docs**: [llmstxt.org](https://llmstxt.org/)
 
 ## Structure
 
@@ -324,10 +359,12 @@ npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill jsdoc
 npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill pagespeed-insights
 ```
 
-### SEO & structured data
+### SEO & AEO
 
 ```bash
+npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill sitemap
 npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill json-ld
+npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill llms-txt
 ```
 
 For more information about using skills in your agent, follow the [skills.sh integration guide](https://skills.sh).
