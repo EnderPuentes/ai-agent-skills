@@ -246,6 +246,27 @@ Audit web pages for performance optimization following PageSpeed Insights guidel
 
 **Docs**: [PageSpeed Insights](https://developers.google.com/speed/docs/insights/v5/about?hl=es-419)
 
+### SEO & structured data
+
+#### json-ld
+
+Add and validate JSON-LD structured data with schema.org vocabulary for SEO, rich results, and linked data. Based on W3C JSON-LD 1.1, schema.org, and Google Search Central guidelines.
+
+**Location**: `json-ld/`
+
+**Use when**: Implementing structured data, schema markup, `application/ld+json`, Organization, WebSite, Article, Product, FAQ, BreadcrumbList, or when the user mentions JSON-LD, schema.org, rich snippets, or Google structured data.
+
+**Features**:
+
+- Core JSON-LD syntax (`@context`, `@type`, `@id`, `@graph`)
+- HTML embedding and Next.js App Router patterns
+- Common schema.org types with copy-paste examples (Organization, WebSite, Article, BreadcrumbList)
+- Validation workflow (Playground, Rich Results Test)
+- Google SEO guidelines summary and common mistakes
+- **reference.md**: W3C specs, schema.org types, Google Search Central, tools, npm libraries — indexable
+
+**Docs**: [JSON-LD 1.1](https://www.w3.org/TR/json-ld11/) · [schema.org](https://schema.org/)
+
 ## Structure
 
 Each skill follows the standard skills.sh structure:
@@ -301,6 +322,12 @@ npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill jsdoc
 
 ```bash
 npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill pagespeed-insights
+```
+
+### SEO & structured data
+
+```bash
+npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill json-ld
 ```
 
 For more information about using skills in your agent, follow the [skills.sh integration guide](https://skills.sh).
