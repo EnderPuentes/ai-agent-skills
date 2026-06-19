@@ -7,6 +7,8 @@ description: Audits the git diff against develop (not main) for UI/React review 
 
 **Author**: Bruno Balderrama ([bmbalderrabano@gmail.com](mailto:bmbalderrabano@gmail.com)). Included in this collection with the author's permission.
 
+These modular checks are also wired into the **Standards** axis of the [`review`](../.agents/skills/review/SKILL.md) skill (`/fly-review`) when the diff touches UI/React files. Use this skill standalone for a develop-based UI audit; use `review` for the full two-axis Standards + Spec pass.
+
 ## Goal
 
 Produce a **text-only audit** of changes versus **`develop`** (never `main` as the comparison base). The user decides what to fix; **do not** apply edits unless they explicitly ask.
