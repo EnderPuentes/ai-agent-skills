@@ -80,6 +80,20 @@ Analyze local git changes and return a copy-paste PowerShell script to split unc
 
 Planning, design stress-testing, and decision-making workflows.
 
+#### clinical-tone
+
+Enforce a strictly objective, clinical, and non-condescending communication style.
+
+**Location**: `clinical-tone/`
+
+**Use when**: You want the AI to communicate like a senior engineer without sycophancy, apologies, over-enthusiasm, or didactic lectures.
+
+**Features**:
+
+- Strips away AI filler ("Great idea!", "I apologize", "As an AI")
+- Focuses on fact-based critique and direct answers
+- Prevents "sandwich feedback" (praise wrapping criticism)
+
 #### grill-me
 
 Interview the user relentlessly about a plan or design until reaching shared understanding. Walks each branch of the design tree one question at a time, with a recommended answer per question.
@@ -345,6 +359,7 @@ npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill split-com
 ### Productivity
 
 ```bash
+npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill clinical-tone
 npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill grill-me
 ```
 
