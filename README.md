@@ -8,6 +8,22 @@ Repository containing reusable skills for AI agents, following the [skills.sh](h
 
 Git workflow, commits, and code review skills.
 
+#### anti-cliche
+
+Enforce strict anti-cliché rules across prose, code, UI/UX, and Next.js/Tailwind/React architecture (2026 Standards).
+
+**Location**: `anti-cliche/`
+
+**Use when**: You want to avoid tropes, banned words, overengineering, UI clichés, excessive abstraction, prop-drilling, legacy React 18 patterns, or generic AI-generated code tells.
+
+**Features**:
+
+- 2026 React/Next.js Architecture defaults (React Compiler, use() hook, URL State)
+- Tailwind v4 best practices
+- AI Code Tells prevention (obvious comments, passive-aggressive error handling)
+- UI/UX Post-AI Boom checks
+- Banned writing tropes and phrases
+
 #### conventional-commits
 
 Generate and validate commit messages following the Conventional Commits specification.
@@ -320,6 +336,7 @@ Skills live at the repository root (no nested group folders) so `npx skills add 
 ### Tooling
 
 ```bash
+npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill anti-cliche
 npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill conventional-commits
 npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill code-review
 npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill split-commit
