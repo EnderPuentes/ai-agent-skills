@@ -108,8 +108,11 @@ Este es un override explícito del usuario sobre el default de
 
 ### 8. Handoff de ejecución
 
-Se ofrecen las mismas dos opciones que `writing-plans`:
-`subagent-driven-development` (recomendado) o `executing-plans`.
+**Actualizado (ver `2026-09-17-endev-execute-design.md`):** en vez de
+ofrecer `subagent-driven-development`/`executing-plans` directamente, se
+ofrece invocar `endev-execute <ruta-del-plan>`, que audita/provee las
+skills necesarias para el plan (oficiales o nuevas, deprecando las propias
+que quedaron obsoletas) y recién entonces dispara una de esas dos.
 
 ## Errores y casos borde
 
