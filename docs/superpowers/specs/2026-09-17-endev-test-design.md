@@ -51,15 +51,22 @@ sistema que ningún test unitario individual ejercita juntas.
   programáticos, sin costo de modelo por interacción. Cubren el camino
   feliz del feature completo y los bordes que el plan menciona
   explícitamente.
-- Se corren todos los tests nuevos y se confirma verde (siguen sin
-  comitear, ver paso 4).
+- **Aserciones de accesibilidad obligatorias en todo test de UI:** cada
+  test de Playwright que ejercita una pantalla o componente nuevo suma
+  `@axe-core/playwright` (o la skill equivalente que la búsqueda de
+  oficial de `endev-execute` ubique si el proyecto usa otro stack de
+  testing) — contraste WCAG AA, focus-visible, focus trap en modales,
+  `prefers-reduced-motion`. Sin esto, la cadena nunca detecta el tipo de
+  falla que `clinical-tone` marca `[BLOCKING]` en su sección de UI/UX; un
+  test que solo confirma "el botón funciona" no confirma que sea usable.
+- Se corren todos los tests nuevos y se confirma verde antes de comitear.
 
-### 4. Handoff
+### 4. Commit y handoff
 
-Sin comitear — igual que el resto de la cadena (ver "Sin commits al repo
-del proyecto" en `2026-09-17-endev-execute-design.md`), los tests nuevos
-quedan en el working tree y se pasa a `endev-review`. `endev-ship` los
-incluye en el commit lógico correspondiente al final.
+Se comitea (checkpoint, ver "Commits por tarea/ola" en
+`2026-09-17-endev-execute-design.md`) con Conventional Commits (`test:
+agregar tests de integración para <feature>`), se agrega la entrada
+correspondiente a `.plans/<tema>.state.json`, y se pasa a `endev-review`.
 
 ## Errores y casos borde
 
@@ -67,11 +74,15 @@ incluye en el commit lógico correspondiente al final.
 |---|---|
 | No hay costuras de integración (el plan tenía una sola tarea) | Se salta este skill entero — no hay nada que un test de integración cubra que el unitario de esa única tarea no cubra ya |
 | El framework de testing no se pudo resolver (docs no accesibles) | Se avisa y se continúa a `endev-review` sin tests de integración nuevos, dejándolo anotado en el resumen |
-| Un test de integración nuevo falla | No se marca en verde; se deja tal cual (sin comitear, como todo lo demás) y se trata como un hallazgo más para `endev-review` en vez de bloquear acá |
+| Un test de integración nuevo falla | No se comitea con el test roto; se trata como un hallazgo más para `endev-review` en vez de bloquear acá |
+| Falta assertion de accesibilidad y el proyecto no tiene skill de a11y ni oficial | Se autora una (mismo mecanismo de `endev-execute` paso 2), con la pregunta de scope habitual |
 
 ## Testing (de este mismo skill)
 
 Dry-run: correr un plan con al menos dos tareas dependientes entre sí
 (ola A produce algo que ola B consume) y confirmar que `endev-test`
 escribe un test de integración que ejercita esa costura específica, lo
-corre en verde, y lo deja sin comitear para `endev-review`.
+corre en verde, y lo comitea. Repetir con un plan que agregue un modal o
+componente interactivo y confirmar que el test de Playwright generado
+incluye aserciones de `axe-core` (contraste, focus-visible), no solo el
+flujo funcional.

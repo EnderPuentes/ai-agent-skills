@@ -37,6 +37,14 @@ auditoría de skills y luego dispara una de esas dos.
 
 ## Flujo
 
+### 0. Marcar el punto de partida
+
+Antes de tocar nada, se guarda `git rev-parse HEAD` del proyecto en
+`.plans/<tema>.state.json` como `chain_start_commit`. Es lo que
+`endev-ship` usa al final para saber hasta dónde hacer `git reset --soft`
+al reorganizar el historial — sin este dato, `endev-ship` no puede
+distinguir el trabajo de esta cadena del historial previo del repo.
+
 ### 1. Escaneo de gaps
 
 Lee el plan guardado (`.plans/...md`), extrae:
@@ -55,6 +63,13 @@ pero el paso 3 (deprecación) igual corre — una skill ya cubierta puede
 estar obsoleta aunque no sea un "gap".
 
 ### 2. Resolución por tecnología faltante
+
+**Resolución en paralelo, no secuencial.** Si el paso 1 encontró varios
+gaps, son independientes por construcción (tecnologías distintas, sin
+dependencia de interfaz entre sí) — se resuelven todos a la vez, no uno
+por uno. Cuatro gaps significan cuatro búsquedas/autorías concurrentes, no
+cuatro ciclos en fila. Es el mismo principio de olas que el paso 5 aplica
+a las tareas del plan; no hay motivo para no aplicarlo acá también.
 
 Primero, clasifica el gap:
 
@@ -83,7 +98,11 @@ Para gaps **públicos**, en este orden:
    `.claude/skills/`, `skills/`)? Si sí, se usa esa fuente: se copia (con
    atribución) o se referencia según su licencia (siempre global).
 3. **Ninguna de las dos existe** → se autora una nueva desde la
-   documentación oficial (WebFetch sobre su sitio de docs).
+   documentación oficial **vigente** (WebFetch sobre su sitio de docs,
+   versión estable actual — no la que el modelo ya "sabe" de
+   entrenamiento; si la librería tuvo un cambio de API mayor reciente, la
+   skill nueva documenta la API actual, con la versión mínima anotada en
+   los metadatos).
 
 Para gaps **internos del proyecto**, se autora directamente leyendo el
 código y las convenciones ya existentes en ese repo (sin búsqueda de
@@ -115,10 +134,11 @@ siempre, sin heurística automática:**
 > `ai-agent-skills` (global + candidata a tu sitio)?"
 
 - **Solo proyecto:** se guarda en `<proyecto>/.claude/skills/<nombre>/` y
-  queda **sin comitear** en el working tree del proyecto — como el resto
-  del trabajo del plan, la comitea `endev-ship` al final (ver
-  `2026-09-17-endev-ship-design.md`). No hay paso de Sanity ni de README
-  del repo de skills — nunca sale de ese proyecto.
+  se comitea de inmediato como checkpoint propio (`feat: agregar skill de
+  proyecto <nombre>`) — mismo criterio de checkpoints por paso que el
+  resto de esta cadena (ver "Commits por tarea/ola" más abajo). No hay
+  paso de Sanity ni de README del repo de skills — nunca sale de ese
+  proyecto.
 - **También global:** además de lo anterior (o en su reemplazo si no tiene
   sentido dentro del repo del proyecto, como en el caso de una librería
   pública), se guarda en `<repo-ai-agent-skills>/<nombre>/SKILL.md`, se
@@ -210,16 +230,20 @@ El resultado del paso 5 decide el camino:
   ejecutan igual (un subagente, sin mensajería) — solo las olas
   multi-tarea usan el mecanismo paralelo completo.
 
-**Sin commits al repo del proyecto en ningún camino:** el template de
-tareas de `writing-plans` incluye un paso final de "Commit" por tarea. En
-esta cadena se instruye explícitamente a cada worker (paralelo,
-secuencial, o vía `subagent-driven-development`/`executing-plans`) a
-saltear ese paso — el código queda modificado/staged pero sin comitear.
-`endev-ship`, al final de toda la cadena (`endev-plan` → `endev-execute` →
-`endev-test` → `endev-review` → `endev-docs` → `endev-ship`), es quien
-comitea todo con `split-commit` de una sola vez. Esto no aplica a los
-commits al repo `ai-agent-skills` (skills nuevas/deprecadas) — esos son un
-repo distinto y siguen comiteándose en el momento, como ya se especificó.
+**Commits por tarea/ola — checkpoints, no historia final.** Cada worker
+(paralelo, secuencial, o vía `subagent-driven-development`/
+`executing-plans`) sigue el template completo de `writing-plans`,
+**incluido** su paso final de "Commit" — esto da un checkpoint real por
+tarea, necesario para poder bisectar si algo falla más adelante en la
+cadena (`endev-test`/`endev-review` pueden tardar varias rondas; sin
+checkpoints acá, un fallo ahí deja un diff enorme sin forma de aislar qué
+tarea lo causó). Revertido respecto de una versión anterior de este spec
+que dejaba todo sin comitear hasta `endev-ship` — ese diseño rompía
+debugging para ahorrarle trabajo a `split-commit`, mal tradeoff.
+`endev-ship` (ver `2026-09-17-endev-ship-design.md`) reorganiza este
+historial incremental en commits lógicos al final vía rebase, no lo genera
+de cero. Los commits al repo `ai-agent-skills` (skills nuevas/deprecadas)
+siguen igual — repo distinto, sin cambios.
 
 **Mecánica de ejecución en olas (cuando hay paralelismo):**
 
@@ -238,9 +262,27 @@ repo distinto y siguen comiteándose en el momento, como ya se especificó.
   outputs (mismo criterio de revisión entre tareas que
   `subagent-driven-development`) antes de spawnear la siguiente ola.
 
-`anti-cliche` se aplica como criterio activo en todo momento durante esta
-ejecución — código sin ambigüedad, sin archivos innecesarios, sin
-sobre-abstracción — tanto en workers paralelos como secuenciales.
+**Criterio de calidad transversal** (todo worker, paralelo o secuencial,
+lo aplica en cada tarea — no es un paso aparte):
+
+- `anti-cliche`: código sin ambigüedad, sin archivos innecesarios, sin
+  sobre-abstracción.
+- Patrones de diseño y modularidad: seguir el patrón ya establecido en el
+  repo para casos análogos (ver "Trabajando en bases de código existentes"
+  de `writing-plans`) antes de introducir uno nuevo; límites de módulo
+  claros, sin acoplamiento innecesario entre tareas de olas distintas.
+  Correspondencia directa con lo que `grill-me` ya acordó en
+  `endev-plan` paso 2 — si `grill-me` fijó un patrón, el worker lo sigue,
+  no decide el suyo.
+- Estándares de mercado 2026 y vigencia: mismo criterio que el paso 2 usa
+  para autoría de skills — código contra la versión estable actual de las
+  dependencias, no contra un patrón obsoleto que el modelo aprendió en
+  entrenamiento.
+
+Esto no reemplaza la auditoría real de estos ejes — esa pasa en
+`endev-review` contra el código ya escrito (ver
+`2026-09-17-endev-review-design.md`). Acá es la primera línea de defensa,
+no la última.
 
 ## Decisiones
 
@@ -249,6 +291,18 @@ sobre-abstracción — tanto en workers paralelos como secuenciales.
   pero se descartó: el riesgo de que la heurística subestime una tarea y
   entregue código de peor calidad pesa más que el ahorro. El orquestador
   también corre en Sonnet.
+- **Commits por tarea reinstaurados.** Una versión anterior de este spec
+  difería todo commit hasta `endev-ship` para simplificar el trabajo de
+  `split-commit`. Se revirtió: perder los checkpoints por tarea hace
+  imposible bisectar un fallo en las etapas siguientes (que pueden tardar
+  varias rondas). `endev-ship` ahora reorganiza el historial incremental
+  en vez de crearlo de cero — mismo beneficio final, sin perder el
+  checkpoint intermedio.
+- **Manifiesto de corrida:** cada wave/tarea que termina agrega una entrada
+  a `.plans/<tema>.state.json` (creado por `endev-plan`) con el nombre de
+  la tarea, el resultado, y si usó el camino paralelo o secuencial. Es lo
+  que le da trazabilidad real a toda la cadena en vez de depender de leer
+  el diff a mano.
 
 ## Errores y casos borde
 
@@ -283,6 +337,13 @@ confirmar en la transcripción:
 - Generar un plan con una tarea puntual (ej. un refactor de un archivo
   específico) y confirmar que la skill temporal se crea en el scratchpad,
   se usa, y se borra (symlink + archivo) al terminar la ejecución.
+- Generar un plan con dos gaps de skills independientes (ej. dos
+  librerías sin skill) y confirmar que se resuelven en paralelo, no en
+  fila — medir que el tiempo total se acerca al del gap más lento, no a
+  la suma de ambos.
+- Confirmar que cada tarea completada deja un commit propio en el
+  historial (no todo junto al final) y que `.plans/<tema>.state.json`
+  tiene una entrada por tarea.
 
 ## Pendiente detectado (fuera de alcance de esta iteración)
 

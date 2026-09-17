@@ -69,12 +69,12 @@ el proyecto.
 sin sicofantismo, sin clichés de redacción, igual que en el resto de la
 cadena.
 
-### 5. Handoff
+### 5. Commit
 
-Sin comitear — mismo criterio que el resto de la cadena (ver "Sin commits
-al repo del proyecto" en `2026-09-17-endev-execute-design.md`). Los
-cambios de documentación quedan en el working tree; `endev-ship` los
-incluye en el commit lógico correspondiente al final.
+Se comitea (checkpoint, ver "Commits por tarea/ola" en
+`2026-09-17-endev-execute-design.md`) con Conventional Commits (`docs:
+actualizar documentación de <feature>`) y se agrega la entrada final a
+`.plans/<tema>.state.json` antes de pasar a `endev-ship`.
 
 ## Errores y casos borde
 
