@@ -67,6 +67,12 @@ ambigüedades del plan una pregunta a la vez con el usuario, igual que lo
 haría `brainstorming` en su fase de clarificación — pero apoyado en lo que
 ya se exploró del código, no solo en la descripción del usuario.
 
+**Cada acuerdo que implique tocar funcionalidad existente o desviarse de un
+supuesto por defecto se registra textual en una sección `## Acuerdos de
+grill-me` del plan final** (paso 7). Esto es lo que
+`endev-review` (ver `2026-09-17-endev-review-design.md`) usa después para
+distinguir un cambio autorizado de una desviación real del plan.
+
 ### 3. Borrador (Opus)
 
 Un subagente (`Agent`, `model: opus`) redacta el plan completo siguiendo el
