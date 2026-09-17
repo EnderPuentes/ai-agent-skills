@@ -94,15 +94,16 @@ review, arma y aplica un fix acotado a eso, sin más.
   análisis de paralelismo de `endev-execute` completo; sería desperdicio
   para un fix puntual. Sigue el mismo ciclo TDD de `writing-plans` (test →
   falla → implementación → pasa) para ese cambio específico.
-- **Salida:** commit del fix (`fix: <descripción puntual>`), vuelta a
-  `endev-review` paso 2.
+- **Salida:** sin comitear (mismo criterio que el resto de la cadena — ver
+  "Sin commits al repo del proyecto" en
+  `2026-09-17-endev-execute-design.md`), vuelta a `endev-review` paso 2.
 
 ## Errores y casos borde
 
 | Caso | Comportamiento |
 |---|---|
 | Un hallazgo requiere romper funcionalidad existente sin acuerdo de grill-me | No se aplica; se marca "requiere decisión del usuario" y se pausa el loop para preguntar en vez de decidir sola |
-| Se llega a 5 rondas sin superar 90 | Se corta, se devuelve el control con el historial de `.audits/` completo |
+| Se llega a 5 rondas sin superar 90 | Se corta, se devuelve el control con el historial de `.audits/` completo. Todo el trabajo de la cadena queda **sin comitear** en el working tree (nada se comitea hasta `endev-ship`, y este caso nunca llega ahí) — se lo advierte explícitamente al usuario para que decida cómo seguir |
 | `.audits/` ya existe pero no está en `.gitignore` | Se agrega la línea a `.gitignore` sin tocar el resto del archivo |
 | El plan no incluye sección de Acuerdos de grill-me (plan viejo, previo a este cambio) | Se trata como "sin acuerdos registrados" — cualquier desviación de funcionalidad existente requiere pregunta al usuario |
 | Dos hallazgos de la misma ronda tocan el mismo archivo | Se resuelven secuenciales (no en paralelo) dentro de esa ronda, para evitar que un `endev-goal` pise el fix del otro |

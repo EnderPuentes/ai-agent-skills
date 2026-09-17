@@ -51,12 +51,15 @@ sistema que ningún test unitario individual ejercita juntas.
   programáticos, sin costo de modelo por interacción. Cubren el camino
   feliz del feature completo y los bordes que el plan menciona
   explícitamente.
-- Se corren todos los tests nuevos y se confirma verde antes de comitear.
+- Se corren todos los tests nuevos y se confirma verde (siguen sin
+  comitear, ver paso 4).
 
-### 4. Commit y handoff
+### 4. Handoff
 
-Se comitea con Conventional Commits (`test: agregar tests de integración
-para <feature>`) y se pasa a `endev-review`.
+Sin comitear — igual que el resto de la cadena (ver "Sin commits al repo
+del proyecto" en `2026-09-17-endev-execute-design.md`), los tests nuevos
+quedan en el working tree y se pasa a `endev-review`. `endev-ship` los
+incluye en el commit lógico correspondiente al final.
 
 ## Errores y casos borde
 
@@ -64,11 +67,11 @@ para <feature>`) y se pasa a `endev-review`.
 |---|---|
 | No hay costuras de integración (el plan tenía una sola tarea) | Se salta este skill entero — no hay nada que un test de integración cubra que el unitario de esa única tarea no cubra ya |
 | El framework de testing no se pudo resolver (docs no accesibles) | Se avisa y se continúa a `endev-review` sin tests de integración nuevos, dejándolo anotado en el resumen |
-| Un test de integración nuevo falla | No se comitea con el test roto; se trata como un hallazgo más para `endev-review` en vez de bloquear acá |
+| Un test de integración nuevo falla | No se marca en verde; se deja tal cual (sin comitear, como todo lo demás) y se trata como un hallazgo más para `endev-review` en vez de bloquear acá |
 
 ## Testing (de este mismo skill)
 
 Dry-run: correr un plan con al menos dos tareas dependientes entre sí
 (ola A produce algo que ola B consume) y confirmar que `endev-test`
 escribe un test de integración que ejercita esa costura específica, lo
-corre en verde, y lo comitea.
+corre en verde, y lo deja sin comitear para `endev-review`.

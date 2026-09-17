@@ -114,9 +114,11 @@ siempre, sin heurística automática:**
 > (`<proyecto>/.claude/skills/<nombre>/`) o también la sumo a
 > `ai-agent-skills` (global + candidata a tu sitio)?"
 
-- **Solo proyecto:** se guarda en `<proyecto>/.claude/skills/<nombre>/`,
-  se comitea al repo del proyecto (no a `ai-agent-skills`). No hay paso de
-  Sanity ni de README del repo de skills — nunca sale de ese proyecto.
+- **Solo proyecto:** se guarda en `<proyecto>/.claude/skills/<nombre>/` y
+  queda **sin comitear** en el working tree del proyecto — como el resto
+  del trabajo del plan, la comitea `endev-ship` al final (ver
+  `2026-09-17-endev-ship-design.md`). No hay paso de Sanity ni de README
+  del repo de skills — nunca sale de ese proyecto.
 - **También global:** además de lo anterior (o en su reemplazo si no tiene
   sentido dentro del repo del proyecto, como en el caso de una librería
   pública), se guarda en `<repo-ai-agent-skills>/<nombre>/SKILL.md`, se
@@ -207,6 +209,17 @@ El resultado del paso 5 decide el camino:
   mecánica de abajo. Las olas de una sola tarea dentro de ese mismo plan se
   ejecutan igual (un subagente, sin mensajería) — solo las olas
   multi-tarea usan el mecanismo paralelo completo.
+
+**Sin commits al repo del proyecto en ningún camino:** el template de
+tareas de `writing-plans` incluye un paso final de "Commit" por tarea. En
+esta cadena se instruye explícitamente a cada worker (paralelo,
+secuencial, o vía `subagent-driven-development`/`executing-plans`) a
+saltear ese paso — el código queda modificado/staged pero sin comitear.
+`endev-ship`, al final de toda la cadena (`endev-plan` → `endev-execute` →
+`endev-test` → `endev-review` → `endev-docs` → `endev-ship`), es quien
+comitea todo con `split-commit` de una sola vez. Esto no aplica a los
+commits al repo `ai-agent-skills` (skills nuevas/deprecadas) — esos son un
+repo distinto y siguen comiteándose en el momento, como ya se especificó.
 
 **Mecánica de ejecución en olas (cuando hay paralelismo):**
 
