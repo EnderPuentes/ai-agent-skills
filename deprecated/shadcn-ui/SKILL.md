@@ -3,6 +3,8 @@ name: shadcn-ui
 description: Install and use shadcn/ui with Tailwind v4 and Next.js (App Router), Vite, or manual setup; configure components.json, add components via CLI, theming with CSS only. Use when adding shadcn/ui, installing shadcn, using Button, Card, Dialog, Form, or other shadcn components, or when the user mentions shadcn, shadcn/ui, or Radix UI with Tailwind.
 ---
 
+> Deprecated: replaced by the official shadcn skill, https://github.com/shadcn-ui/ui/tree/main/skills/shadcn (`npx skills add shadcn/ui`). See this repo's history for the original content.
+
 # shadcn/ui
 
 ## Overview

@@ -133,24 +133,6 @@ Set up and use **Tailwind CSS v4 only** with Next.js (App Router), Vite, or CLI.
 
 **Docs**: [Tailwind CSS v4](https://tailwindcss.com/docs)
 
-#### shadcn-ui
-
-Install and use shadcn/ui with **Tailwind v4** and Next.js (App Router), Vite, or manual setup. Configure `components.json`, add components via CLI, theming with CSS only (no Tailwind config file).
-
-**Location**: `shadcn-ui/`
-
-**Use when**: Adding shadcn/ui, installing shadcn, using Button, Card, Dialog, Form, or any shadcn component, or when the user mentions shadcn, shadcn/ui, or Radix UI with Tailwind.
-
-**Features**:
-
-- Quick start (`shadcn create`) and existing-project setup (Next.js, Vite)
-- `components.json` and path aliases
-- **Full list of official components** with CLI names and short descriptions (accordion, alert, button, card, dialog, form, sonner, table, etc.)
-- Theming with CSS variables and `@theme` (Tailwind v4)
-- Common patterns and mistakes
-- **reference.md**: Official doc links, Tailwind v4 + shadcn, component list, schema (indexable)
-
-**Docs**: [shadcn/ui](https://ui.shadcn.com/docs)
 
 ### UI & animation
 
@@ -350,7 +332,6 @@ npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill grill-me
 
 ```bash
 npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill tailwind-css
-npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill shadcn-ui
 ```
 
 ### UI & animation
