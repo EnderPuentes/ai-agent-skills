@@ -156,23 +156,6 @@ Install and use shadcn/ui with **Tailwind v4** and Next.js (App Router), Vite, o
 
 Component development and motion.
 
-#### gsap
-
-Install and use GSAP (GreenSock Animation Platform) for high-performance JavaScript animations. Covers core utilities, React integration, and popular plugins.
-
-**Location**: `gsap/`
-
-**Use when**: Creating complex animations, scroll-based effects, UI transitions, SVG animations, or when the user mentions GSAP, GreenSock, or ScrollTrigger.
-
-**Features**:
-
-- Core utilities: Tween, Timeline, Eases
-- React integration with `@gsap/react` and `useGSAP`
-- Popular plugins: ScrollTrigger, Flip, Observer, etc.
-- Best practices for performance and FOUC prevention
-- **reference.md**: Official GSAP docs, core API, plugins, React integration — indexable
-
-**Docs**: [GSAP](https://gsap.com/docs/v3/)
 
 #### storybook
 
@@ -373,7 +356,6 @@ npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill shadcn-ui
 ### UI & animation
 
 ```bash
-npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill gsap
 npx skills add https://github.com/EnderPuentes/ai-agent-skills --skill storybook
 ```
 

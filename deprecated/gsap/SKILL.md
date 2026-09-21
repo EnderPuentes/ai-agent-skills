@@ -3,6 +3,8 @@ name: gsap
 description: Install and use GSAP (GreenSock Animation Platform) for high-performance JavaScript animations. Covers core utilities (Tween, Timeline), React integration (@gsap/react/useGSAP), Eases, and popular plugins like ScrollTrigger, ScrollSmoother, and Flip. Use when creating complex animations, scroll-based effects, UI transitions, or SVG animations, or when the user mentions GSAP, GreenSock, or ScrollTrigger.
 ---
 
+> Deprecated: replaced by the official GSAP skills, https://github.com/greensock/gsap-skills (gsap-core, gsap-timeline, gsap-scrolltrigger, gsap-plugins, gsap-react, gsap-utils, gsap-performance, gsap-frameworks). See this repo's history for the original content.
+
 # GSAP (GreenSock Animation Platform)
 
 ## Overview
